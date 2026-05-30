@@ -1,5 +1,8 @@
 # Usage
 
+AGI is meant to make the entrypoint simple. The user says `$agi`, and the
+harness should infer the right workflow from the live project state.
+
 ## Basic Prompt
 
 ```text
@@ -52,6 +55,18 @@ Validate findings with concrete evidence before changing code.
 - Prefer batch runners for repetitive queues instead of reasoning item by item.
 - Update checkpoints only when evidence exists.
 
+## The User Should Not Need To Say
+
+- "Use CodeGraph for this."
+- "Use ADB for Android."
+- "Use Playwright for browser evidence."
+- "Use a reviewer subagent."
+- "Use the design skill."
+- "Update the checkpoint."
+
+Those are routing decisions. `$agi` should choose them when the repo evidence
+justifies them.
+
 ## What AGI Should Not Do
 
 - Pretend one green test proves the product.
@@ -60,3 +75,4 @@ Validate findings with concrete evidence before changing code.
 - Spend xhigh reasoning on read-only mapping unless safety-critical.
 - Copy secrets, cookies, profiles, sessions, or local account state.
 
+See [`examples.md`](examples.md) for more copy-paste prompts.

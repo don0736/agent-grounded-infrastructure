@@ -8,6 +8,9 @@ Use this before publishing to GitHub.
 - [ ] `./scripts/sanitize-check.sh` passes.
 - [ ] `git status --short` only shows intended files.
 - [ ] README explains what AGI is and is not.
+- [ ] README has a clear TL;DR install path.
+- [ ] README includes copy-paste `$agi` examples.
+- [ ] README includes an AI reviewer prompt or links to one.
 - [ ] Install docs work from a fresh clone.
 - [ ] MCP docs list required secrets without including any.
 - [ ] AI reviewer docs explain how to evaluate the harness.
@@ -31,4 +34,3 @@ Short version:
 > AGI is a public Codex harness for long-running, evidence-grounded engineering:
 > skills, MCP routing, subagent roles, checkpoints, and validation discipline in
 > one installable repo.
-

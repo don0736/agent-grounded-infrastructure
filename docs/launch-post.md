@@ -5,11 +5,13 @@ Short X post:
 ```text
 I open-sourced AGI - Agent Grounded Infrastructure.
 
-It is my Codex harness for long-running engineering work: one router skill,
-bounded subagents, MCP routing, CodeGraph-first mapping, checkpoint discipline,
-secret-safe templates, and evidence-first validation.
+It is my Codex harness for long-running engineering work.
 
-Not a prompt dump. An installable agent operating system.
+Install it, type $agi, and let Codex route itself through skills, MCPs,
+subagents, CodeGraph, ADB, Playwright, design, security, validation, and
+checkpoints.
+
+Not a prompt dump. A grounded operating harness.
 
 GitHub: https://github.com/don0736/agent-grounded-infrastructure
 ```
@@ -25,13 +27,20 @@ Thread outline:
      capability routing, bounded subagents, concrete validation, and ledger
      checkpoints.
 
-3. **Core idea**
+3. **One command**
+   - `$agi continue`
+   - `$agi make this production-ready`
+   - `$agi audit this app`
+   - `$agi improve this UI`
+
+4. **Core idea**
    - Let the model choose the path, but force evidence, source of truth,
      cutover discipline, and real product gates.
 
-4. **What is included**
+5. **What is included**
    - `$agi` skill, AGENTS template, Codex agents, optional hooks, MCP reference,
      Gemini companion rules, installer, validator, secret scanner.
 
-5. **Ask**
+6. **Ask**
+   - Send the repo to your own AI and ask whether it is worth installing.
    - Try it, review it, and suggest high-signal improvements.

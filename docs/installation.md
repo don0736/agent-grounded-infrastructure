@@ -9,6 +9,18 @@
 
 ## Install
 
+Ask an agent to do it:
+
+```text
+Install AGI from https://github.com/don0736/agent-grounded-infrastructure.
+Read the README and docs/installation.md first. Run validate, run install
+with --dry-run, explain what files will be copied, then install only the
+public-safe harness. Do not copy private tokens, sessions, profiles, cookies,
+logs, or account state.
+```
+
+Or run it yourself:
+
 ```bash
 ./scripts/validate.sh
 ./scripts/install.sh --dry-run
@@ -46,6 +58,9 @@ Typical optional secrets:
 
 See `docs/mcp-reference.md`.
 
+For the exact copied layout, see
+[`docs/copy-paste-codex-setup.md`](copy-paste-codex-setup.md).
+
 ## After Install
 
 Open Codex and run:
@@ -62,4 +77,3 @@ For long work:
 slices, validate with artifacts, and keep a compact checkpoint after each
 material slice.
 ```
-

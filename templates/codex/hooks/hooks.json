@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/.codex/hooks/session_start_autonomy.py",
+            "statusMessage": "Loading AGI autonomy profile"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/.codex/hooks/user_prompt_autonomy.py",
+            "statusMessage": "Classifying prompt"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/.codex/hooks/stop_autonomy.py",
+            "timeout": 8,
+            "statusMessage": "Checking closure"
+          }
+        ]
+      }
+    ]
+  }
+}

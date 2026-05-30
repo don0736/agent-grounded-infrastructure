@@ -1,0 +1,120 @@
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+
+# Public-safe default. Power users can choose stricter or looser settings in
+# their private config after understanding the risk.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[agents]
+max_threads = 4
+max_depth = 1
+
+[features]
+hooks = true
+goals = true
+memories = true
+shell_snapshot = true
+unified_exec = true
+mentions_v2 = true
+
+[mcp_servers.git]
+command = "mcp-server-git"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.fetch]
+command = "mcp-server-fetch"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.time]
+command = "mcp-server-time"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.grep]
+command = "grep-mcp"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.duckduckgo]
+command = "duckduckgo-mcp-server"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.playwright]
+command = "playwright-mcp"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.github]
+command = "mcp-server-github"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.github.env]
+GITHUB_PERSONAL_ACCESS_TOKEN = "REPLACE_WITH_LOCAL_SECRET"
+
+[mcp_servers.brave-search]
+command = "mcp-server-brave-search"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.brave-search.env]
+BRAVE_API_KEY = "REPLACE_WITH_LOCAL_SECRET"
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+default_tools_approval_mode = "auto"
+
+[mcp_servers.stitch]
+command = "stitch-mcp"
+args = ["proxy"]
+default_tools_approval_mode = "auto"
+
+[mcp_servers.stitch.env]
+STITCH_API_KEY = "REPLACE_WITH_LOCAL_SECRET"
+
+[mcp_servers.scrapling]
+command = "scrapling"
+args = ["mcp"]
+default_tools_approval_mode = "auto"
+
+[mcp_servers.codegraph]
+command = "codegraph"
+args = ["serve", "--mcp"]
+default_tools_approval_mode = "auto"
+
+[agents.default]
+description = "AGI root orchestrator for broad, benchmark-driven, or multi-step software tasks."
+config_file = "~/.codex/agents/default.toml"
+
+[agents.worker]
+description = "Bounded implementation worker with mandatory verification."
+config_file = "~/.codex/agents/worker.toml"
+
+[agents.explorer]
+description = "Read-only execution-path mapper."
+config_file = "~/.codex/agents/explorer.toml"
+
+[agents.docs_researcher]
+description = "Read-only official docs and version-sensitive fact checker."
+config_file = "~/.codex/agents/docs_researcher.toml"
+
+[agents.reviewer]
+description = "Read-only correctness, regression, security, and missing-test reviewer."
+config_file = "~/.codex/agents/reviewer.toml"
+
+[agents.oracle_critical]
+description = "High-risk xhigh reviewer for auth, payment, secrets, concurrency, release, and pre-ship audits."
+config_file = "~/.codex/agents/oracle_critical.toml"
+
+[agents.rubric_evaluator]
+description = "Read-only evaluator for acceptance and evidence sufficiency."
+config_file = "~/.codex/agents/rubric_evaluator.toml"
+
+[agents.ui_debugger]
+description = "Browser/runtime debugger for UI, network, console, screenshots, and multimodal evidence."
+config_file = "~/.codex/agents/ui_debugger.toml"
+
+[agents.design_pixel_perfect]
+description = "Visual/UI agent for target creation, pixel-perfect UI patches, and screenshot validation."
+config_file = "~/.codex/agents/design_pixel_perfect.toml"
+
+[agents.benchmark_researcher]
+description = "Read-only benchmark translator for vague product or architecture goals."
+config_file = "~/.codex/agents/benchmark_researcher.toml"
+

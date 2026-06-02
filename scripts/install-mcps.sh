@@ -65,7 +65,7 @@ if [ "$SKIP_NODE" -ne 1 ]; then
     )
   else
     node_packages=(
-      @colbymchenry/codegraph@0.9.4
+      @colbymchenry/codegraph@0.9.8
       @playwright/mcp@0.0.74
       @modelcontextprotocol/server-github@2025.4.8
       @modelcontextprotocol/server-brave-search@0.6.2
